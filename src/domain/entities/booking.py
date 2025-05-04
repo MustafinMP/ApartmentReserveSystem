@@ -1,6 +1,5 @@
 from __future__ import annotations
-from src.domain.entities.apartment import Apartment
-from src.domain.entities.guest import Guest
+from src.domain.entities import Guest, Apartment
 from src.domain.entity_values.booking import BookingPeriod, BookingId
 
 
