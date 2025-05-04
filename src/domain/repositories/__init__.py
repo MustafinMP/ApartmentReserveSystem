@@ -1,0 +1,1 @@
+from src.domain.repositories.apartment_repository import ApartmentRepository
