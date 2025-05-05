@@ -1,8 +1,8 @@
 from abc import abstractmethod
 
-from src.domain.entity_values.apartment import ApartmentId
-from src.domain.exceptions import ApartmentNotFound
-from src.domain.repositories import ApartmentRepository
+from src.application.repositories import ApartmentRepository
+from src.domain.apartment.exceptions import ApartmentNotFound
+from src.domain.apartment.value_objects import ApartmentId
 
 
 class DeleteApartmentUseCase:

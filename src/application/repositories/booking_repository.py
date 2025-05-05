@@ -1,8 +1,10 @@
 from abc import ABC, abstractmethod
 from typing import Optional
 
-from src.domain.entities import Booking, Guest, Apartment
-from src.domain.entity_values.booking import BookingId
+from src.domain.apartment.entities import Apartment
+from src.domain.booking.entities import Booking
+from src.domain.booking.value_objects import BookingId
+from src.domain.guest.entities import Guest
 
 
 class BookingRepository(ABC):

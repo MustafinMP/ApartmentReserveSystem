@@ -1,8 +1,8 @@
 from abc import ABC, abstractmethod
 from typing import Optional
 
-from src.domain.entities import Guest
-from src.domain.entity_values.guest import GuestId, GuestPhoneNumber
+from src.domain.guest.entities import Guest
+from src.domain.guest.value_objects import GuestId, GuestPhoneNumber
 
 
 class GuestRepository(ABC):

@@ -1,9 +1,9 @@
 from abc import abstractmethod
 
-from src.domain.entities.apartment import Apartment
-from src.domain.entity_values.apartment import ApartmentCost, ApartmentDescription, ApartmentName
-from src.domain.entity_values.apartment.apartment_address import ApartmentAddress
-from src.domain.repositories import ApartmentRepository
+from src.domain.apartment.entities import Apartment
+from src.domain.apartment.value_objects import ApartmentName, ApartmentDescription, ApartmentRent
+from src.domain.apartment.value_objects.apartment_address import ApartmentAddress
+from src.application.repositories import ApartmentRepository
 
 
 class CreateApartmentUseCase:
@@ -13,7 +13,7 @@ class CreateApartmentUseCase:
             name: ApartmentName,
             description: ApartmentDescription,
             address: ApartmentAddress,
-            cost: ApartmentCost
+            rent: ApartmentRent
     ) -> Apartment:
         ...
 
@@ -27,9 +27,9 @@ class CreateApartmentUseCaseImpl(CreateApartmentUseCase):
             name: ApartmentName,
             description: ApartmentDescription,
             address: ApartmentAddress,
-            cost: ApartmentCost
+            rent: ApartmentRent
     ) -> Apartment:
-        apartment = Apartment.create(name=name, description=description, address=address, cost=cost)
+        apartment = Apartment.create(name=name, description=description, address=address, rent=rent)
         self.apartment_repository.save(apartment)
         return apartment
 

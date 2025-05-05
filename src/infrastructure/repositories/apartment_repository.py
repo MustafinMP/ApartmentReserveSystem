@@ -1,8 +1,8 @@
 from typing import Optional
 
-from src.domain.entities.apartment import Apartment
-from src.domain.entity_values.apartment import ApartmentId
-from src.domain.repositories.apartment_repository import ApartmentRepository
+from src.domain.apartment.entities.apartment import Apartment
+from src.domain.apartment.value_objects import ApartmentId
+from src.application.repositories import ApartmentRepository
 
 
 class ApartmentRepositoryImpl(ApartmentRepository):

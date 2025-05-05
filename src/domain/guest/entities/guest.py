@@ -1,5 +1,6 @@
 from __future__ import annotations
-from src.domain.entity_values.guest import GuestId, GuestFullname, GuestPhoneNumber
+
+from src.domain.guest.value_objects import GuestId, GuestFullname, GuestPhoneNumber
 
 
 class Guest:

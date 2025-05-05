@@ -1,8 +1,8 @@
 from abc import ABC, abstractmethod
 from typing import Optional
 
-from src.domain.entities import Apartment
-from src.domain.entity_values.apartment import ApartmentId
+from src.domain.apartment.entities import Apartment
+from src.domain.apartment.value_objects import ApartmentId
 
 
 class ApartmentRepository(ABC):

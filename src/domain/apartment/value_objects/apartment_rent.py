@@ -3,5 +3,5 @@ from dataclasses import dataclass
 
 
 @dataclass(frozen=True)
-class ApartmentCost:
+class ApartmentRent:
     value: float

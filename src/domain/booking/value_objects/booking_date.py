@@ -2,7 +2,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from datetime import date
 
-from src.domain.exceptions import InvalidBookingDate
+from src.domain.booking.exceptions import InvalidBookingDate
 
 
 @dataclass(frozen=True)
