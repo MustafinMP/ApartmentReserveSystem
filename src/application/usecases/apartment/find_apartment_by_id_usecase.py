@@ -2,6 +2,7 @@ from abc import abstractmethod
 
 from src.application.repositories import ApartmentRepository
 from src.domain.apartment.entities import Apartment
+from src.domain.apartment.exceptions import ApartmentNotFound
 from src.domain.apartment.value_objects import ApartmentId
 
 
@@ -17,6 +18,10 @@ class FindApartmentBuIdUseCaseImpl(FindApartmentBuIdUseCase):
 
     def execute(self, apartment_id: ApartmentId) -> Apartment:
         apartment = self.apartment_repository.find_by_id(apartment_id)
+
+        if apartment is None:
+            raise ApartmentNotFound
+
         return apartment
 
 

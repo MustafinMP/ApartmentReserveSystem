@@ -19,3 +19,7 @@ class CreateGuestUseCaseImpl(CreateGuestUseCase):
         guest = Guest.create(fullname, phone_number)
         self.guest_repository.save(guest)
         return guest
+
+
+def new_create_guest_usecase(guest_repository: GuestRepository) -> CreateGuestUseCase:
+    return CreateGuestUseCaseImpl(guest_repository)

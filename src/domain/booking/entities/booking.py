@@ -1,12 +1,12 @@
 from __future__ import annotations
 
 from src.domain.apartment.entities import Apartment
-from src.domain.booking.value_objects import BookingPeriod, BookingId
+from src.domain.booking.value_objects import BookingDates, BookingId
 from src.domain.guest.entities import Guest
 
 
 class Booking:
-    def __init__(self, booking_id: BookingId, guest: Guest, apartment: Apartment, date: BookingPeriod):
+    def __init__(self, booking_id: BookingId, guest: Guest, apartment: Apartment, date: BookingDates):
         self._id = booking_id
         self._guest = guest
         self._apartment = apartment
@@ -23,5 +23,5 @@ class Booking:
         return self._is_paid_for
 
     @staticmethod
-    def create(guest: Guest, apartment: Apartment, date: BookingPeriod) -> Booking:
+    def create(guest: Guest, apartment: Apartment, date: BookingDates) -> Booking:
         return Booking(BookingId.generate(), guest, apartment, date)

@@ -22,3 +22,7 @@ class DeleteGuestUseCaseImpl(DeleteGuestUseCase):
             raise GuestNotFound
 
         self.guest_repository.delete(guest_id)
+
+
+def new_delete_guest_usecase(guest_repository: GuestRepository) -> DeleteGuestUseCase:
+    return DeleteGuestUseCaseImpl(guest_repository)
