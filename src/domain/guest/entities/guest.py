@@ -14,6 +14,18 @@ class Guest:
         self._fullname = fullname
         self._phone_number = phone_number
 
+    @property
+    def id(self) -> GuestId:
+        return self._id
+
+    @property
+    def fullname(self) -> GuestFullname:
+        return self._fullname
+
+    @property
+    def phone_number(self) -> GuestPhoneNumber:
+        return self._phone_number
+
     @staticmethod
     def create(
             fullname: GuestFullname,

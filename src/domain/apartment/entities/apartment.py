@@ -25,6 +25,18 @@ class Apartment:
         return self._name
 
     @property
+    def description(self) -> ApartmentDescription:
+        return self._description
+
+    @property
+    def address(self) -> ApartmentAddress:
+        return self._address
+
+    @property
+    def rent(self) -> ApartmentRent:
+        return self._rent
+
+    @property
     def rent_amount(self) -> ApartmentRent:
         return self._rent
 

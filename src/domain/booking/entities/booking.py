@@ -19,8 +19,12 @@ class Booking:
     def total_amount(self) -> float:
         return self._apartment.rent_amount.value * self._date.days()
 
+    @property
     def is_paid_for(self) -> bool:
         return self._is_paid_for
+
+    def pay(self):
+        ...
 
     @staticmethod
     def create(guest: Guest, apartment: Apartment, date: BookingDates) -> Booking:
