@@ -33,7 +33,7 @@ class ApartmentModel(Base):
     @staticmethod
     def from_entity(apartment: Apartment) -> ApartmentModel:
         return ApartmentModel(
-            apartment_id=apartment.id.value,
+            id=apartment.id.value,
             name=apartment.name.value,
             description=apartment.description.value,
             address=apartment.address.value,

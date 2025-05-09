@@ -1,2 +1,4 @@
 from src.application.repositories.apartment_repository import ApartmentRepository
+from src.application.repositories.booking_repository import BookingRepository
+from src.application.repositories.employee_repository import EmployeeRepository
 from src.application.repositories.guest_repository import GuestRepository
