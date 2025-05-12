@@ -5,6 +5,7 @@ from uuid import UUID
 from pydantic import BaseModel
 
 from src.domain.guest.entities import Guest
+from src.domain.guest.value_objects import GuestId, GuestFullname, GuestPhoneNumber
 
 
 class GuestSchema(BaseModel):
@@ -18,6 +19,13 @@ class GuestSchema(BaseModel):
             id=entity.id.value,
             fullname=entity.fullname.value,
             phone_number=entity.phone_number.value
+        )
+
+    def to_entity(self) -> Guest:
+        return Guest(
+            GuestId(self.id),
+            GuestFullname(self.fullname),
+            GuestPhoneNumber(self.phone_number)
         )
 
 

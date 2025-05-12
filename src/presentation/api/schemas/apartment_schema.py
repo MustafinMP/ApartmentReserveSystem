@@ -5,6 +5,8 @@ from uuid import UUID
 from pydantic import BaseModel
 
 from src.domain.apartment.entities import Apartment
+from src.domain.apartment.value_objects import ApartmentId, ApartmentName, ApartmentDescription, ApartmentAddress, \
+    ApartmentRent
 
 
 class ApartmentSchema(BaseModel):
@@ -23,6 +25,16 @@ class ApartmentSchema(BaseModel):
             address=entity.address.value,
             rent=entity.rent.value
         )
+
+    def to_entity(self) -> Apartment:
+        return Apartment(
+            ApartmentId(self.id),
+            ApartmentName(self.name),
+            ApartmentDescription(self.description),
+            ApartmentAddress(self.address),
+            ApartmentRent(self.rent)
+        )
+
 
 
 class CreateApartmentSchema(BaseModel):
